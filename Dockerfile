@@ -1,6 +1,2 @@
 FROM jupyter/datascience-notebook
-RUN pip install jupyterlab && \
-    jupyter serverextension enable --py jupyterlab
-# start jupyterlab
-# 
-CMD ["start.sh", "jupyter", "lab"]
+RUN docker run -it --rm -p 8888:8888 jupyter/datascience-notebook
